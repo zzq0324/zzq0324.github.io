@@ -9,6 +9,8 @@
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo.extend.filter.register(<span class="string">&#x27;theme_inject&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">injects</span>) </span>&#123;</span><br><span class="line">  injects.head.file(<span class="string">&#x27;gitter&#x27;</span>, <span class="string">&#x27;views/gitter.swig&#x27;</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  injects.style.push(<span class="string">&#x27;views/gitter.styl&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
