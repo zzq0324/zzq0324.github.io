@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/06/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>Hexo Next访问归档和分类报404</title>
+    <url>/2021/06/20/hexo-theme-next-categories-tags-404/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><code>hexo-theme-next</code>安装完成后，在菜单栏打开归档和分类，如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>此时访问报404。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 切换到hexo 项目的根目录下</span><br><span class="line">cd $&#123;hexo_init_folder&#125;</span><br><span class="line"></span><br><span class="line">// 增加分类页面</span><br><span class="line">hexo new page categories</span><br><span class="line"></span><br><span class="line">// 设置类型</span><br><span class="line">vi source/categories/index.md</span><br><span class="line"></span><br><span class="line">// 增加类型</span><br><span class="line">// 增加代码 type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hexo.extend.filter.register(<span class="string">&#x27;theme_inject&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">injects</span>) </span>&#123;</span><br><span class="line">  injects.head.file(<span class="string">&#x27;gitter&#x27;</span>, <span class="string">&#x27;views/gitter.swig&#x27;</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  injects.style.push(<span class="string">&#x27;views/gitter.styl&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>完整的代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-06-18 23:32:08</span><br><span class="line">type: categories</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">// 切换到hexo 项目的根目录下</span><br><span class="line">cd $&#123;hexo_init_folder&#125;</span><br><span class="line"></span><br><span class="line">// 增加分类页面</span><br><span class="line">hexo new page tags</span><br><span class="line"></span><br><span class="line">// 设置类型</span><br><span class="line">vi source/tags/index.md</span><br><span class="line"></span><br><span class="line">// 增加类型</span><br><span class="line">// 增加代码 type: &quot;tags&quot;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hk;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">String str = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;aaa&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>完整的代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-06-18 23:31:33</span><br><span class="line">type: tags</span><br><span class="line">layout: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
 </search>
