@@ -26,6 +26,18 @@
 <td><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a></td>
 <td><code>hexo-theme-next</code>主题字数和阅读时长插件</td>
 </tr>
+<tr>
+<td><a href="https://github.com/tea3/hexo-related-popular-posts">hexo-related-popular-posts</a></td>
+<td>关联文章推荐</td>
+</tr>
+<tr>
+<td><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a></td>
+<td><code>hexo-theme-next</code>主题搜索插件</td>
+</tr>
+<tr>
+<td><a href="https://github.com/chekun/hexo-excerpt">hexo-excerpt</a></td>
+<td>文章概要自动生成插件</td>
+</tr>
 </tbody></table>
 ]]></content>
       <categories>
