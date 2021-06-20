@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo常见插件汇总</title>
+    <url>/2021/06/20/Hexo%E5%B8%B8%E8%A7%81%E6%8F%92%E4%BB%B6%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<div class="note success">
+            <p>为方便查找，将常用Hexo插件进行了汇总。 </p>
+          </div>
+
+<table>
+<thead>
+<tr>
+<th>插件名称</th>
+<th>插件作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/jaredly/hexo-admin">hexo-admin</a></td>
+<td>Hexo博客引擎的管理用户界面插件</td>
+</tr>
+<tr>
+<td><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></td>
+<td>Hexo部署插件,将生成的静态文件推送到远程Git</td>
+</tr>
+<tr>
+<td><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a></td>
+<td><code>hexo-theme-next</code>主题字数和阅读时长插件</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Next访问归档和分类报404</title>
     <url>/2021/06/20/hexo-theme-next-categories-tags-404/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><code>hexo-theme-next</code>安装完成后，在菜单栏打开归档和分类，如下：</p>
