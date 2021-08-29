@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>漫天的沙</title>
+  
+  <subtitle>一行代码，亿万生活</subtitle>
+  <link href="https://www.zzq0324.cn/atom.xml" rel="self"/>
+  
+  <link href="https://www.zzq0324.cn/"/>
+  <updated>2021-08-29T15:18:38.000Z</updated>
+  <id>https://www.zzq0324.cn/</id>
+  
+  <author>
+    <name>zzq0324</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从打车业务发展看技术的扩展性</title>
+    <link href="https://www.zzq0324.cn/2021/08/29/tec-extension-by-express-business/"/>
+    <id>https://www.zzq0324.cn/2021/08/29/tec-extension-by-express-business/</id>
+    <published>2021-08-29T02:17:11.000Z</published>
+    <updated>2021-08-29T15:18:38.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title: 从打车业务看技术的扩展性&lt;br&gt;tags:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;Cola&lt;br&gt;categories:&lt;/li&gt;
+&lt;li&gt;后端开发&lt;br&gt;toc: true&lt;br&gt;img: ‘&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端开发" scheme="https://www.zzq0324.cn/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Java" scheme="https://www.zzq0324.cn/tags/Java/"/>
+    
+    <category term="Cola" scheme="https://www.zzq0324.cn/tags/Cola/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL慢查询影响业务要怎么紧急处理？</title>
+    <link href="https://www.zzq0324.cn/2021/08/06/mysql-slow-query-how-to-do/"/>
+    <id>https://www.zzq0324.cn/2021/08/06/mysql-slow-query-how-to-do/</id>
+    <published>2021-08-06T01:00:19.000Z</published>
+    <updated>2021-08-07T03:55:58.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;系统上线后，发现数据库慢查询导致整个数据库实例的CPU飙高，优化程序再上线需要一定的时间，无法短时间内解决，这时候应该怎么紧急处理？本文将基于MySQL谈一下慢查询下的应急处理方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="https://www.zzq0324.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="MySQL" scheme="https://www.zzq0324.cn/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记IDEA Profiler排查内存泄露导致的Full GC问题</title>
+    <link href="https://www.zzq0324.cn/2021/07/29/idea-profiler-memory-leak-full-gc/"/>
+    <id>https://www.zzq0324.cn/2021/07/29/idea-profiler-memory-leak-full-gc/</id>
+    <published>2021-07-28T20:53:19.000Z</published>
+    <updated>2021-07-29T09:10:52.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;内存泄露在实际开发过程中会比较经常遇到，如何排查和解决是非常关键的。“工欲善其事必先利其器”，找到好的工具才能事半功倍。本文将介绍使用&lt;code&gt;IDEA Profiler&lt;/code&gt;排查问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="IDEA" scheme="https://www.zzq0324.cn/tags/IDEA/"/>
+    
+    <category term="TroubleShoot" scheme="https://www.zzq0324.cn/tags/TroubleShoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HomeBrew设置阿里云镜像</title>
+    <link href="https://www.zzq0324.cn/2021/07/28/homebrew-mirror-set-aliyun/"/>
+    <id>https://www.zzq0324.cn/2021/07/28/homebrew-mirror-set-aliyun/</id>
+    <published>2021-07-28T03:26:42.000Z</published>
+    <updated>2021-07-28T03:31:46.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;使用&lt;code&gt;HomeBrew&lt;/code&gt;官方的源下载很慢，等半天还经常中断。为提高下载安装速度，推荐设置为国内的镜像。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;配置阿里云镜像&quot;&gt;&lt;a href=&quot;#配置阿里云镜像&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="HomeBrew" scheme="https://www.zzq0324.cn/tags/HomeBrew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钉钉专注模式</title>
+    <link href="https://www.zzq0324.cn/2021/07/27/dingtalk-focus-mode/"/>
+    <id>https://www.zzq0324.cn/2021/07/27/dingtalk-focus-mode/</id>
+    <published>2021-07-27T11:35:02.000Z</published>
+    <updated>2021-07-27T11:35:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;大家可能都会碰到一个问题，工作的时候经常会被消息打断，有些消息可能是不相关或者不紧急的。如何能最大减少程度减少消息的干扰？今天就来看看钉钉的专注模式。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;什么是专注模式？&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="钉钉" scheme="https://www.zzq0324.cn/tags/%E9%92%89%E9%92%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过FontMetrics和AffineTransform等比例缩放字体</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/fontMetrics-and-affineTransform/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/fontMetrics-and-affineTransform/</id>
+    <published>2021-07-24T03:51:41.000Z</published>
+    <updated>2021-07-24T15:55:22.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术架构" scheme="https://www.zzq0324.cn/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Java" scheme="https://www.zzq0324.cn/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm的镜像替换成淘宝</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/npm-mirror-change-to-taobao/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/npm-mirror-change-to-taobao/</id>
+    <published>2021-07-24T03:29:59.000Z</published>
+    <updated>2021-07-24T15:38:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;由于科学上网的缘故，在国内直接使用&lt;code&gt;npm&lt;/code&gt;的官方镜像是非常慢的，因此这里推荐使用淘宝 NPM 镜像。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;查询当前镜像&quot;&gt;&lt;a href=&quot;#查询当前镜像&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="npm" scheme="https://www.zzq0324.cn/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域名解析详解</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/domain-analysis-detail/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/domain-analysis-detail/</id>
+    <published>2021-07-24T02:41:32.000Z</published>
+    <updated>2021-07-24T15:22:51.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是域名资源记录？&quot;&gt;&lt;a href=&quot;#什么是域名资源记录？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="云服务" scheme="https://www.zzq0324.cn/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="域名" scheme="https://www.zzq0324.cn/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Feature Flag使用说明</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/feature-flag-user-reference/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/feature-flag-user-reference/</id>
+    <published>2021-07-24T01:09:32.000Z</published>
+    <updated>2021-07-25T13:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;日常应用中一般会使用配置中心，&lt;code&gt;feature-flag&lt;/code&gt;结合配置中心可以很好的实现灰度信息的热更新，达到修改好立马生效的效果，配置中心一般使用&lt;code&gt;Nacos&lt;/code&gt;或者&lt;code&gt;Apollo&lt;/code&gt;。&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="技术架构" scheme="https://www.zzq0324.cn/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Java" scheme="https://www.zzq0324.cn/tags/Java/"/>
+    
+    <category term="Feature-Flag" scheme="https://www.zzq0324.cn/tags/Feature-Flag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Feature Flag代码实现</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/feature-java-code-analysis/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/feature-java-code-analysis/</id>
+    <published>2021-07-24T01:03:35.000Z</published>
+    <updated>2021-07-25T13:39:03.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文介绍Feature Flag的代码实现及其具体细节。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;框架设计&quot;&gt;&lt;a href=&quot;#框架设计&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术架构" scheme="https://www.zzq0324.cn/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Java" scheme="https://www.zzq0324.cn/tags/Java/"/>
+    
+    <category term="Feature-Flag" scheme="https://www.zzq0324.cn/tags/Feature-Flag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Feature Flag灰度算法设计</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/feature-flag-algorithm-design/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/feature-flag-algorithm-design/</id>
+    <published>2021-07-23T19:47:19.000Z</published>
+    <updated>2021-07-25T13:38:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;如何判断算法好不好&quot;&gt;&lt;a href=&quot;#如何判断算法好不好&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术架构" scheme="https://www.zzq0324.cn/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Java" scheme="https://www.zzq0324.cn/tags/Java/"/>
+    
+    <category term="Feature-Flag" scheme="https://www.zzq0324.cn/tags/Feature-Flag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Feature Flag介绍</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/feature-flag-intruduction/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/feature-flag-intruduction/</id>
+    <published>2021-07-23T19:22:36.000Z</published>
+    <updated>2021-07-25T13:38:44.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;“防范预防胜于救灾，安全生产重于泰山”。安全生产对于企业来说是至关重要的，从IT的角度，如何通过技术手段保障安全，显得尤为重要。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;什么是Feature-Flag&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术架构" scheme="https://www.zzq0324.cn/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Feature-Flag" scheme="https://www.zzq0324.cn/tags/Feature-Flag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云数据追踪</title>
+    <link href="https://www.zzq0324.cn/2021/07/24/aliyun-data-tracking/"/>
+    <id>https://www.zzq0324.cn/2021/07/24/aliyun-data-tracking/</id>
+    <published>2021-07-23T17:13:50.000Z</published>
+    <updated>2021-07-24T14:48:37.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;开发过程中或者项目上线后，遇到问题的时候经常需要回溯下数据是怎么变更的，特别是日志做的不够好的应用。下面一起来了解下阿里云的数据追踪功能。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;数据追踪能解决什么问题？&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="云服务" scheme="https://www.zzq0324.cn/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="阿里云" scheme="https://www.zzq0324.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么不少同学上班期间不喜欢戴工牌？</title>
+    <link href="https://www.zzq0324.cn/2021/07/21/why-colleagues-does-not-like-work-card/"/>
+    <id>https://www.zzq0324.cn/2021/07/21/why-colleagues-does-not-like-work-card/</id>
+    <published>2021-07-21T03:05:54.000Z</published>
+    <updated>2021-07-24T05:06:34.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;每个公司都有自己的企业文化，也都有自己的规章制度，只要在这个集体，在这个组织，就得按规章制度办事。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="管理" scheme="https://www.zzq0324.cn/categories/%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="企业文化" scheme="https://www.zzq0324.cn/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>目标管理九字箴言</title>
+    <link href="https://www.zzq0324.cn/2021/07/21/goal-based-theory/"/>
+    <id>https://www.zzq0324.cn/2021/07/21/goal-based-theory/</id>
+    <published>2021-07-21T02:46:30.000Z</published>
+    <updated>2021-07-24T14:13:44.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;在职场中，相信大家都会为自己或者团队设定短期、中期以及长期目标。如何设定目标？目标设定后，用什么样的方式去管理？怎么更好的去落地？有没有什么方法论能够很好的支撑？相信大家都会遇到这样的问题，本文将为您介绍九字箴言，通过一定的套路来对目标做管理。&lt;/</summary>
+        
+      
+    
+    
+    
+    <category term="管理" scheme="https://www.zzq0324.cn/categories/%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="目标" scheme="https://www.zzq0324.cn/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+    <category term="组织" scheme="https://www.zzq0324.cn/tags/%E7%BB%84%E7%BB%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jar包发布到Maven中央仓库流程</title>
+    <link href="https://www.zzq0324.cn/2021/07/18/jar-deploy-to-maven-central-flow/"/>
+    <id>https://www.zzq0324.cn/2021/07/18/jar-deploy-to-maven-central-flow/</id>
+    <published>2021-07-18T01:36:36.000Z</published>
+    <updated>2021-07-18T13:44:31.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Maven中央仓库并不支持直接发布 jar 包，需要将 jar 包发布到一些指定的第三方Maven仓库，然后该仓库再将 jar 包同步到 Maven中央仓库，Sonatype便是</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Maven" scheme="https://www.zzq0324.cn/tags/Maven/"/>
+    
+    <category term="Sonatype" scheme="https://www.zzq0324.cn/tags/Sonatype/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于vercel搭建个人博客</title>
+    <link href="https://www.zzq0324.cn/2021/07/18/deploy-blog-by-vercel/"/>
+    <id>https://www.zzq0324.cn/2021/07/18/deploy-blog-by-vercel/</id>
+    <published>2021-07-17T17:00:26.000Z</published>
+    <updated>2021-07-24T14:45:01.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;使用&lt;code&gt;Hexo&lt;/code&gt;搭配&lt;code&gt;Pages&lt;/code&gt;服务来搭建自己的博客网站，就不需要花额外的钱购买服务器来部署博客了。目前市面上比较流行的，国外是&lt;code&gt;Github</summary>
+        
+      
+    
+    
+    
+    <category term="云服务" scheme="https://www.zzq0324.cn/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="Hexo" scheme="https://www.zzq0324.cn/tags/Hexo/"/>
+    
+    <category term="Vercel" scheme="https://www.zzq0324.cn/tags/Vercel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dubbo 2.7.12线程池关闭的Bug处理</title>
+    <link href="https://www.zzq0324.cn/2021/07/16/dubbo-2.7.12-executor-closed-bug/"/>
+    <id>https://www.zzq0324.cn/2021/07/16/dubbo-2.7.12-executor-closed-bug/</id>
+    <published>2021-07-16T04:51:49.000Z</published>
+    <updated>2021-07-24T05:09:51.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dubbo.apache.org/zh/&quot;&gt;Apache Dubbo&lt;/a&gt;是一款高性能、轻量级的开源</summary>
+        
+      
+    
+    
+    
+    <category term="技术架构" scheme="https://www.zzq0324.cn/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Java" scheme="https://www.zzq0324.cn/tags/Java/"/>
+    
+    <category term="Dubbo" scheme="https://www.zzq0324.cn/tags/Dubbo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Arthas实现动态编译</title>
+    <link href="https://www.zzq0324.cn/2021/07/16/arthas-dynamic-compiler/"/>
+    <id>https://www.zzq0324.cn/2021/07/16/arthas-dynamic-compiler/</id>
+    <published>2021-07-16T04:44:46.000Z</published>
+    <updated>2021-07-24T05:10:07.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;前段时间在开发&lt;a href=&quot;https://github.com/zzq0324/feature-flag&quot;&gt;Feature</summary>
+        
+      
+    
+    
+    
+    <category term="技术架构" scheme="https://www.zzq0324.cn/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="Java" scheme="https://www.zzq0324.cn/tags/Java/"/>
+    
+    <category term="Arthas" scheme="https://www.zzq0324.cn/tags/Arthas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>推荐一款好看的Hexo主题</title>
+    <link href="https://www.zzq0324.cn/2021/07/16/recommend-hexo-theme-matery/"/>
+    <id>https://www.zzq0324.cn/2021/07/16/recommend-hexo-theme-matery/</id>
+    <published>2021-07-16T04:14:18.000Z</published>
+    <updated>2021-07-15T16:40:58.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。推出以后受到广大开发者的喜爱和好评。通过&lt;code&gt;Hexo&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Hexo" scheme="https://www.zzq0324.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
