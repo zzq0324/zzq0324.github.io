@@ -6,7 +6,7 @@
   <link href="https://www.zzq0324.cn/atom.xml" rel="self"/>
   
   <link href="https://www.zzq0324.cn/"/>
-  <updated>2021-08-29T15:18:38.000Z</updated>
+  <updated>2021-08-29T15:20:12.000Z</updated>
   <id>https://www.zzq0324.cn/</id>
   
   <author>
@@ -21,19 +21,15 @@
     <link href="https://www.zzq0324.cn/2021/08/29/tec-extension-by-express-business/"/>
     <id>https://www.zzq0324.cn/2021/08/29/tec-extension-by-express-business/</id>
     <published>2021-08-29T02:17:11.000Z</published>
-    <updated>2021-08-29T15:18:38.000Z</updated>
+    <updated>2021-08-29T15:20:12.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;title: 从打车业务看技术的扩展性&lt;br&gt;tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Java&lt;/li&gt;
-&lt;li&gt;Cola&lt;br&gt;categories:&lt;/li&gt;
-&lt;li&gt;后端开发&lt;br&gt;toc: true&lt;br&gt;img: ‘&lt;a</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;从打车业务的发展，结合订单的设计演变看技术扩展性的重要性。对于业务来说，一般绕不开多场景、多状态，因此在技术设计之初要充分评估和考虑，保持扩展性又不过度设计，为未来能更快赋能业务打下坚实的基础。&lt;br&gt;Cola的状态机和扩展节点是基于业务抽象总结的</summary>
         
       
     
