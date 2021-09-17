@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>MongoDB TTL索引的使用以及应用场景</title>
+      <link href="/2021/09/17/mongodb-ttl-use-scenario/"/>
+      <url>/2021/09/17/mongodb-ttl-use-scenario/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是TTL索引"><a href="#什么是TTL索引" class="headerlink" title="什么是TTL索引"></a>什么是TTL索引</h2><p>TTL全称是Time To Live，是一种特殊的索引，通过这种索引MongoDB会过一段时间后自动移除集合中的文档。这对于某些类型的信息来说是一个很理想的特性，例如机器生成的事件数据，日志，会话信息等，这些数据都只需要在数据库中保存有限时间。</p><h2 id="TTL索引运行逻辑"><a href="#TTL索引运行逻辑" class="headerlink" title="TTL索引运行逻辑"></a>TTL索引运行逻辑</h2><ul><li>MongoDB会开启一个后台线程读取该TTL索引的值来判断文档是否过期，但不会保证已过期的数据会立马被删除，因后台线程每60秒触发一次删除任务，且如果删除的数据量较大，会存在上一次的删除未完成，而下一次的任务已经开启的情况，导致过期的数据也会出现超过了数据保留时间60秒以上的现象；</li><li>对于副本集而言，TTL索引的后台进程只会在primary节点开启，在从节点会始终处于空闲状态，从节点的数据删除是由主库删除后产生的oplog来做同步；</li><li>TTL索引除了有expireAfterSeconds属性外，和普通索引一样。</li></ul><h2 id="TTL索引的限制"><a href="#TTL索引的限制" class="headerlink" title="TTL索引的限制"></a>TTL索引的限制</h2><ul><li>只支持对单个字段创建TTL索引，复合索引不支持expireAfterSeconds选项；</li><li>_id列不支持TTL索引；</li><li>固定集合(capped collection)不支持TTL索引；</li><li>不支持用createIndex() 修改expireAfterSeconds属性，但可以用collMod命令修改，或者重建索引，但重建对于大集合成本较高，建议用collMod方式；</li><li>一个列只能创建普通索引或TTL索引，不能同时对一个列创建这2种类型索引(实际TTL索引本身就是普通索引，只是多了一个过期属性)；</li><li>如果一个列已经存在索引，则需要先将该索引drop后才能重建为TTL索引，不能直接转换；</li><li>如果该字段不是date类型，则文档不会过期。同样的，如果文档没包含索引的这个字段，则文档不会过期。</li></ul><h2 id="TTL索引的使用"><a href="#TTL索引的使用" class="headerlink" title="TTL索引的使用"></a>TTL索引的使用</h2><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><pre class="line-numbers language-mongodb" data-language="mongodb"><code class="language-mongodb">db<span class="token punctuation">.</span>collection<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span>keys<span class="token punctuation">,</span> options<span class="token punctuation">)</span>    <span class="token property">options</span><span class="token operator">:</span>        expireAfterSeconds 指定多少秒或者包含日期值的数组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><pre class="line-numbers language-mongodb" data-language="mongodb"><code class="language-mongodb">db<span class="token punctuation">.</span>eventlog<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span> <span class="token punctuation">&#123;</span> <span class="token property">"lastModifiedDate"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> <span class="token property">expireAfterSeconds</span><span class="token operator">:</span> <span class="token number">3600</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>通过以上命令执行之后，在lastModifiedDate + expireAfterSeconds秒之后该记录失效。所以如果要具体以某一列作为失效时间，可以将expireAfterSeconds设置为0。</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>TTL索引适用于保存固定周期内的数据。例如：</p><ul><li>保留系统60天内的操作日志；</li><li>短信发送的时候需要有发送规则，对于最近7天内发送的用户不重复发送营销短信，那么可以通过TTL索引保留7天内的数据；;</li><li>……</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MongoDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从打车业务发展看技术的扩展性</title>
       <link href="/2021/08/29/tec-extension-by-express-business/"/>
       <url>/2021/08/29/tec-extension-by-express-business/</url>

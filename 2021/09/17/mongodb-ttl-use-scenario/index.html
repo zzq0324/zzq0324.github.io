@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="通过FontMetrics和AffineTransform等比例缩放字体, 漫天的沙">
+    <meta name="keywords" content="MongoDB TTL索引的使用以及应用场景, 漫天的沙">
     <meta name="description" content="路漫漫其修远兮，吾将上下而求索">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>通过FontMetrics和AffineTransform等比例缩放字体 | 漫天的沙</title>
+    <title>MongoDB TTL索引的使用以及应用场景 | 漫天的沙</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -289,12 +289,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://static.zzq0324.cn/Fvv0GDFwWGdfBxo59mWPD2yYgfjP')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">通过FontMetrics和AffineTransform等比例缩放字体</h1>
+                    <h1 class="description center-align post-title">MongoDB TTL索引的使用以及应用场景</h1>
                 </div>
             </div>
         </div>
@@ -410,8 +410,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/MongoDB/">
+                                <span class="chip bg-color">MongoDB</span>
                             </a>
                         
                     </div>
@@ -422,8 +422,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/" class="post-category">
-                                技术架构
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
                             </a>
                         
                     </div>
@@ -435,7 +435,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-24
+                    2021-09-17
                 </div>
                 
 
@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    398
+                    702
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -474,47 +474,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>使用<code>Graphics2D</code>进行绘图的过程中，对于指定的区域可能会填充文字，如果文字个数是不固定的话，区域的宽度很难把控。本文将介绍一个方法，通过代码实现对字体的等比例缩放。</p>
-<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><ul>
-<li>Graphics2D设置要使用的字体及其大小；</li>
-<li>通过FontMetrics计算要填充的文字填充后需要占用的宽度；</li>
-<li>计算的宽度和当前画图区域的宽度进行比较(假设当前计算要占用的宽度为W1，预计要存放文字的区域为W2)：<ul>
-<li>如果W1比W2还小，证明预置的空间还未占满，可以不做任何处理，因为空间放得下；</li>
-<li>如果W1比W2还大，那么W1/W2的值即为缩放的比例，记录为S1（需要将文字大小等比例缩放才能在预置的空间显示出来）；</li>
-<li>重新设置字体大小(原来的大小乘以S1，等比例缩放)。</li>
+                <h2 id="什么是TTL索引"><a href="#什么是TTL索引" class="headerlink" title="什么是TTL索引"></a>什么是TTL索引</h2><p>TTL全称是Time To Live，是一种特殊的索引，通过这种索引MongoDB会过一段时间后自动移除集合中的文档。这对于某些类型的信息来说是一个很理想的特性，例如机器生成的事件数据，日志，会话信息等，这些数据都只需要在数据库中保存有限时间。</p>
+<h2 id="TTL索引运行逻辑"><a href="#TTL索引运行逻辑" class="headerlink" title="TTL索引运行逻辑"></a>TTL索引运行逻辑</h2><ul>
+<li>MongoDB会开启一个后台线程读取该TTL索引的值来判断文档是否过期，但不会保证已过期的数据会立马被删除，因后台线程每60秒触发一次删除任务，且如果删除的数据量较大，会存在上一次的删除未完成，而下一次的任务已经开启的情况，导致过期的数据也会出现超过了数据保留时间60秒以上的现象；</li>
+<li>对于副本集而言，TTL索引的后台进程只会在primary节点开启，在从节点会始终处于空闲状态，从节点的数据删除是由主库删除后产生的oplog来做同步；</li>
+<li>TTL索引除了有expireAfterSeconds属性外，和普通索引一样。</li>
 </ul>
-</li>
+<h2 id="TTL索引的限制"><a href="#TTL索引的限制" class="headerlink" title="TTL索引的限制"></a>TTL索引的限制</h2><ul>
+<li>只支持对单个字段创建TTL索引，复合索引不支持expireAfterSeconds选项；</li>
+<li>_id列不支持TTL索引；</li>
+<li>固定集合(capped collection)不支持TTL索引；</li>
+<li>不支持用createIndex() 修改expireAfterSeconds属性，但可以用collMod命令修改，或者重建索引，但重建对于大集合成本较高，建议用collMod方式；</li>
+<li>一个列只能创建普通索引或TTL索引，不能同时对一个列创建这2种类型索引(实际TTL索引本身就是普通索引，只是多了一个过期属性)；</li>
+<li>如果一个列已经存在索引，则需要先将该索引drop后才能重建为TTL索引，不能直接转换；</li>
+<li>如果该字段不是date类型，则文档不会过期。同样的，如果文档没包含索引的这个字段，则文档不会过期。</li>
 </ul>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Graphics2D</span> g2d <span class="token operator">=</span> image<span class="token punctuation">.</span><span class="token function">createGraphics</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-g2d<span class="token punctuation">.</span><span class="token function">setRenderingHint</span><span class="token punctuation">(</span><span class="token class-name">RenderingHints</span><span class="token punctuation">.</span>KEY_ANTIALIASING<span class="token punctuation">,</span> <span class="token class-name">RenderingHints</span><span class="token punctuation">.</span>VALUE_ANTIALIAS_ON<span class="token punctuation">)</span><span class="token punctuation">;</span>
-g2d<span class="token punctuation">.</span><span class="token function">setFont</span><span class="token punctuation">(</span>font<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="TTL索引的使用"><a href="#TTL索引的使用" class="headerlink" title="TTL索引的使用"></a>TTL索引的使用</h2><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><pre class="line-numbers language-mongodb" data-language="mongodb"><code class="language-mongodb">db<span class="token punctuation">.</span>collection<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span>keys<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+    <span class="token property">options</span><span class="token operator">:</span>
+        expireAfterSeconds 指定多少秒或者包含日期值的数组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<span class="token class-name">FontMetrics</span> fm <span class="token operator">=</span> g2d<span class="token punctuation">.</span><span class="token function">getFontMetrics</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 名称宽度，+5为了修正</span>
-<span class="token keyword">int</span> textWidth <span class="token operator">=</span> fm<span class="token punctuation">.</span><span class="token function">stringWidth</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span>
-<span class="token comment">// 名称高度</span>
-<span class="token keyword">int</span> textHeight <span class="token operator">=</span> fm<span class="token punctuation">.</span><span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><pre class="line-numbers language-mongodb" data-language="mongodb"><code class="language-mongodb">db<span class="token punctuation">.</span>eventlog<span class="token punctuation">.</span><span class="token function">createIndex</span><span class="token punctuation">(</span> <span class="token punctuation">&#123;</span> <span class="token property">"lastModifiedDate"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> <span class="token property">expireAfterSeconds</span><span class="token operator">:</span> <span class="token number">3600</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token comment">// 如果超过预置的文本宽度textWidth，进行缩放</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>textWidth <span class="token operator">></span> width <span class="token operator">||</span> textHeight <span class="token operator">></span> height<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">double</span> xScale <span class="token operator">=</span> width <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span> textWidth<span class="token punctuation">;</span>
-  <span class="token keyword">double</span> yScale <span class="token operator">=</span> height <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span> textHeight<span class="token punctuation">;</span>
-  <span class="token keyword">double</span> scale <span class="token operator">=</span> xScale<span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>xScale <span class="token operator">></span> yScale<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    scale <span class="token operator">=</span> yScale<span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token comment">// 字体缩放</span>
-  g2d<span class="token punctuation">.</span><span class="token function">setFont</span><span class="token punctuation">(</span>font<span class="token punctuation">.</span><span class="token function">deriveFont</span><span class="token punctuation">(</span><span class="token class-name">AffineTransform</span><span class="token punctuation">.</span><span class="token function">getScaleInstance</span><span class="token punctuation">(</span>scale<span class="token punctuation">,</span> scale<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>logger<span class="token punctuation">.</span><span class="token function">isDebugEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    logger<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"textWidth: &#123;&#125;, image width: &#123;&#125;, will scale now, scale: &#123;&#125;"</span><span class="token punctuation">,</span>
-            <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span>textWidth<span class="token punctuation">,</span> width<span class="token punctuation">,</span> scale<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-  fm <span class="token operator">=</span> g2d<span class="token punctuation">.</span><span class="token function">getFontMetrics</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+<p>通过以上命令执行之后，在lastModifiedDate + expireAfterSeconds秒之后该记录失效。所以如果要具体以某一列作为失效时间，可以将expireAfterSeconds设置为0。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>TTL索引适用于保存固定周期内的数据。例如：</p>
+<ul>
+<li>保留系统60天内的操作日志；</li>
+<li>短信发送的时候需要有发送规则，对于最近7天内发送的用户不重复发送营销短信，那么可以通过TTL索引保留7天内的数据；;</li>
+<li>……</li>
+</ul>
 
-g2d<span class="token punctuation">.</span><span class="token function">drawString</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token punctuation">(</span>width <span class="token operator">-</span> textWidth<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> fm<span class="token punctuation">.</span><span class="token function">getAscent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>height <span class="token operator">-</span> fm<span class="token punctuation">.</span><span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-g2d<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -540,7 +528,7 @@ g2d<span class="token punctuation">.</span><span class="token function">dispose<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.zzq0324.cn/2021/07/24/fontMetrics-and-affineTransform/">https://www.zzq0324.cn/2021/07/24/fontMetrics-and-affineTransform/</a>
+                    <a href="https://www.zzq0324.cn/2021/09/17/mongodb-ttl-use-scenario/">https://www.zzq0324.cn/2021/09/17/mongodb-ttl-use-scenario/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -578,8 +566,8 @@ g2d<span class="token punctuation">.</span><span class="token function">dispose<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/MongoDB/">
+                                    <span class="chip bg-color">MongoDB</span>
                                 </a>
                             
                         </div>
@@ -678,17 +666,17 @@ g2d<span class="token punctuation">.</span><span class="token function">dispose<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/27/dingtalk-focus-mode/">
+                <a href="/2021/09/17/mongodb-ttl-use-scenario/">
                     <div class="card-image">
                         
+                        <img src="https://static.zzq0324.cn/Fvv0GDFwWGdfBxo59mWPD2yYgfjP" class="responsive-img" alt="MongoDB TTL索引的使用以及应用场景">
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="钉钉专注模式">
-                        
-                        <span class="card-title">钉钉专注模式</span>
+                        <span class="card-title">MongoDB TTL索引的使用以及应用场景</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -698,26 +686,27 @@ g2d<span class="token punctuation">.</span><span class="token function">dispose<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    软件工具
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%92%89%E9%92%89/">
-                        <span class="chip bg-color">钉钉</span>
+                    <a href="/tags/MongoDB/">
+                        <span class="chip bg-color">MongoDB</span>
                     </a>
                     
                 </div>
@@ -731,12 +720,12 @@ g2d<span class="token punctuation">.</span><span class="token function">dispose<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/24/npm-mirror-change-to-taobao/">
+                <a href="/2021/08/29/tec-extension-by-express-business/">
                     <div class="card-image">
                         
-                        <img src="https://static.zzq0324.cn/Fq1QavA2RT_SrAZXEzlQRl4CrRF3" class="responsive-img" alt="npm的镜像替换成淘宝">
+                        <img src="https://static.zzq0324.cn/FlEWJDfV2f7gmIj26God-MfeOsMJ" class="responsive-img" alt="从打车业务发展看技术的扩展性">
                         
-                        <span class="card-title">npm的镜像替换成淘宝</span>
+                        <span class="card-title">从打车业务发展看技术的扩展性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -747,14 +736,14 @@ g2d<span class="token punctuation">.</span><span class="token function">dispose<
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    软件工具
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
+                                    后端开发
                                 </a>
                             
                             
@@ -764,8 +753,12 @@ g2d<span class="token punctuation">.</span><span class="token function">dispose<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Cola/">
+                        <span class="chip bg-color">Cola</span>
                     </a>
                     
                 </div>
