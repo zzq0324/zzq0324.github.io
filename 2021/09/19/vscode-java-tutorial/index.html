@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="（四）文件预览之预览服务实现, 漫天的沙">
+    <meta name="keywords" content="Getting Started with Java in Visual Studio Code, 漫天的沙">
     <meta name="description" content="路漫漫其修远兮，吾将上下而求索">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>（四）文件预览之预览服务实现 | 漫天的沙</title>
+    <title>Getting Started with Java in Visual Studio Code | 漫天的沙</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -289,12 +289,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">（四）文件预览之预览服务实现</h1>
+                    <h1 class="description center-align post-title">Getting Started with Java in Visual Studio Code</h1>
                 </div>
             </div>
         </div>
@@ -410,8 +410,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88/">
-                                <span class="chip bg-color">文件预览</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Visual-Studio-Code/">
+                                <span class="chip bg-color">Visual Studio Code</span>
                             </a>
                         
                     </div>
@@ -435,7 +439,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-07-25
+                    2021-09-19
                 </div>
                 
 
@@ -444,14 +448,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    76
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -474,80 +478,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>前几篇中介绍了如何搭建预览服务器，在服务搭建起来之后，就应该考虑如何将预览服务与业务对接起来。Office Online Server本身支持WOPI协议，可以很方便的将业务附件与预览服务对接起来。WOPI全称Web Application Open Platform Interface Protocol，基于该协议扩展自己的代码可以实现对文件的鉴权以及下载。主要需要包括两个接口（最好基于restful来定义接口，更清晰）：</p>
+                <p>官方参考资料：</p>
 <ul>
-<li>提供一个/files/{fileId}的接口，该接口用于鉴权：也就是通过fileId，判断当前用户是否具备对该附件的访问权限，如果没权限，那么返回HTTP CODE=401；如果有权限，则根据fileId取出文件信息返回，需要包括BaseFileName、Size、Version以及OwnerId；</li>
-<li>提供下载附件的接口，该接口的url必需是上一步中定义的url+”/content”，按restful接口的定义是某个文件的内容。该接口一样会将之前的一些参数信息带回来，该步骤也鉴权。如果没问题，那么预览服务就通过该接口下载附件，进而转换。接下来会重点进行分析。</li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-tutorial">Getting Started with Java in VS Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-editing">Navigate and edit Java source code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-refactoring">Java refactoring and Source Actions</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-linting">Java formatting and linting</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-project">Java project management in VS Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-build">Java build tools in VS Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-debugging">Running and debugging Java</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-testing">Testing Java with Visual Studio Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-spring-boot">Spring Boot in Visual Studio Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-tomcat-jetty">Working with Application Servers in VS Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-on-azure">Deploy Java to Azure</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/extensions">Java extensions for Visual Studio Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/java/java-faq">Frequent Asked Questions</a></li>
 </ul>
-<h2 id="详细过程分析"><a href="#详细过程分析" class="headerlink" title="详细过程分析"></a>详细过程分析</h2><p>详细的过程，各个类型的附件预览大同小异，下面会以word为例进行分析。</p>
-<ul>
-<li>用户请求Office Online Server的url：<a href="http://IP:port/wv/wordviewerframe.aspx?WOPISrc=http%3a%2f%2f192.168.2.102%3a8080%2fwopiserver%2ffiles%2f2%3faccess_token%3dOfficeOnlineServer">http://IP:port/wv/wordviewerframe.aspx?WOPISrc=http%3a%2f%2f192.168.2.102%3a8080%2fwopiserver%2ffiles%2f2%3faccess_token%3dOfficeOnlineServer</a>，其中ip,port为预览服务器对应的地址，接下来的/wv/wordviwerframe.aspx是word预览的地址，该地址可以从<a href="http://IP:port/hosting/discovery">http://IP:port/hosting/discovery</a>中得出，接下来就比较重要了，请求要带一个参数WOPISrc，代表要访问的附件需要采用WOPI协议来访问下载（该协议的地址是需要urlencode过的），WOPISrc的地址也是对应上面介绍的自己搭建服务的地址/files/{fileId}；</li>
-<li>Office Onlne Server收到请求后，根据WOPISrc参数进行urldecode，解码之后访问该url进行权限校验，判断是否有权限，如果权限没问题，则可以取到文件的基本信息；</li>
-<li>上一个步骤如果权限没问题，则此时Office Online Server会向/files/{fileId}/content发起文件下载的请求，下载完成之后Office Online Server将会对该文件进行转换，转换完毕之后返回给最开始的调用端进行渲染显示了。</li>
-</ul>
-<blockquote>
-<p>WOPISrc中自己自定义参数，该参数urldecode之后，会带到/files/{fileId}的请求中。</p>
-</blockquote>
-<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p>核心代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
-* 通过文件唯一标识以及token获取文件的详细信息
-* 
-* @param fileId 文件的唯一标识，比如可以是MD5或者数据库的id。此处fileId为对应的文件名
-* @param access_token 访问的token
-* @return
-*/</span>
-<span class="token annotation punctuation">@ResponseBody</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/files/&#123;fileId&#125;"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token function">getFileInfo</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"fileId"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> fileId<span class="token punctuation">,</span>
-    <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"access_token"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> token<span class="token punctuation">,</span> <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">boolean</span> isTokenValid <span class="token operator">=</span> <span class="token class-name">TokenUtil</span><span class="token punctuation">.</span><span class="token function">verifyToken</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isTokenValid<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 按照wopi协议，返回HTTP CODE=401</span>
-        response<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>UNAUTHORIZED<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">></span></span> fileInfoMap <span class="token operator">=</span> <span class="token class-name">FileUtils</span><span class="token punctuation">.</span><span class="token function">getFileInfo</span><span class="token punctuation">(</span><span class="token class-name">FILE_Map</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>fileId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>fileInfoMap <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 根据fileId找不到对应的文件，按照wopi协议返回HTTP CODE=404</span>
-        response<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>NOT_FOUND<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> fileInfoMap<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">/**
-* 下载附件内容，与上面的方法在url上的区别为增加了/contents，意为下载该附件下的内容
-* 
-* @param fileId 文件的唯一标识，比如可以是MD5或者数据库的id。此处fileId为对应的文件名
-* @param response
-* @throws Exception
-*/</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/files/&#123;fileId&#125;/contents"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getFileContent</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"fileId"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> fileId<span class="token punctuation">,</span>
-    <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"access_token"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> access_token<span class="token punctuation">,</span> <span class="token class-name">HttpServletResponse</span> response<span class="token punctuation">)</span>
-    <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"download file..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token class-name">FileUtils</span><span class="token punctuation">.</span><span class="token function">getFile</span><span class="token punctuation">(</span><span class="token class-name">FILE_Map</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>fileId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>file <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 根据fileId找不到对应的文件，按照wopi协议返回HTTP CODE=404</span>
-        response<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>NOT_FOUND<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-        response<span class="token punctuation">.</span><span class="token function">addHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Disposition"</span><span class="token punctuation">,</span>
-            <span class="token string">"attachment;filename="</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        response<span class="token punctuation">.</span><span class="token function">addHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Length"</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">OutputStream</span> out <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">(</span><span class="token class-name">InputStream</span> is <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span>is<span class="token punctuation">.</span><span class="token function">available</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        is<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedOutputStream</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"application/octet-stream"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        out<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>out <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            out<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -574,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.zzq0324.cn/2018/07/25/office-preview-service/">https://www.zzq0324.cn/2018/07/25/office-preview-service/</a>
+                    <a href="https://www.zzq0324.cn/2021/09/19/vscode-java-tutorial/">https://www.zzq0324.cn/2021/09/19/vscode-java-tutorial/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,8 +558,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88/">
-                                    <span class="chip bg-color">文件预览</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Visual-Studio-Code/">
+                                    <span class="chip bg-color">Visual Studio Code</span>
                                 </a>
                             
                         </div>
@@ -716,13 +666,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/07/25/mysql-slow-log-summary/">
+                <a href="/2021/09/19/mac-vscode-shortcut/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MySQL慢查日志总结">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Mac VSCode快捷键">
                         
-                        <span class="card-title">MySQL慢查日志总结</span>
+                        <span class="card-title">Mac VSCode快捷键</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -733,56 +683,8 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-07-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-19
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2018/07/25/office-preview-create-server/">
-                    <div class="card-image">
-                        
-                        <img src="https://static.zzq0324.cn/FosMDF9lNvLZxfhgTwjsP9S00Zj0" class="responsive-img" alt="（三）文件预览之预览服务器搭建">
-                        
-                        <span class="card-title">（三）文件预览之预览服务器搭建</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-07-25
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -798,8 +700,56 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88/">
-                        <span class="chip bg-color">文件预览</span>
+                    <a href="/tags/Visual-Studio-Code/">
+                        <span class="chip bg-color">Visual Studio Code</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/09/17/mongodb-ttl-use-scenario/">
+                    <div class="card-image">
+                        
+                        <img src="https://static.zzq0324.cn/Fvv0GDFwWGdfBxo59mWPD2yYgfjP" class="responsive-img" alt="MongoDB TTL索引的使用以及应用场景">
+                        
+                        <span class="card-title">MongoDB TTL索引的使用以及应用场景</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MongoDB/">
+                        <span class="chip bg-color">MongoDB</span>
                     </a>
                     
                 </div>
