@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Jar包发布到Maven中央仓库流程, 漫天的沙">
+    <meta name="keywords" content="记arthas-memorycompiler在VSCode报错, 漫天的沙">
     <meta name="description" content="路漫漫其修远兮，吾将上下而求索">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Jar包发布到Maven中央仓库流程 | 漫天的沙</title>
+    <title>记arthas-memorycompiler在VSCode报错 | 漫天的沙</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -289,12 +289,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://static.zzq0324.cn/blog_20181001_chart.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Jar包发布到Maven中央仓库流程</h1>
+                    <h1 class="description center-align post-title">记arthas-memorycompiler在VSCode报错</h1>
                 </div>
             </div>
         </div>
@@ -410,12 +410,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Maven/">
-                                <span class="chip bg-color">Maven</span>
+                            <a href="/tags/Arthas/">
+                                <span class="chip bg-color">Arthas</span>
                             </a>
                         
-                            <a href="/tags/Sonatype/">
-                                <span class="chip bg-color">Sonatype</span>
+                            <a href="/tags/Visual-Studio-Code/">
+                                <span class="chip bg-color">Visual Studio Code</span>
                             </a>
                         
                     </div>
@@ -426,7 +426,11 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                            <a href="/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/" class="post-category">
+                                开源框架
+                            </a>
+                        
+                            <a href="/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
                                 软件工具
                             </a>
                         
@@ -439,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-18
+                    2021-09-23
                 </div>
                 
 
@@ -448,14 +452,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    165
+                    709
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -479,16 +483,60 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>Maven中央仓库并不支持直接发布 jar 包，需要将 jar 包发布到一些指定的第三方Maven仓库，然后该仓库再将 jar 包同步到 Maven中央仓库，Sonatype便是 Maven中央仓库指定的暂存库。</p>
+<p>相信不少Java开发人员都在使用<code>IntelliJ IDEA</code>进行开发，本人也使用很长时间的<code>IntelliJ IDEA</code>。随着Visual Studio Code越来越火，中秋节假日期间想体验下，因此下载并针对VSCode进行了配置，将手头现有的一些项目导入进行了试用。</p>
 </blockquote>
-<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>本文将介绍Jar包发布到Maven中央仓库的主要流程，流程整理如下：</p>
-<p><img src="https://static.zzq0324.cn/FqCQN5TNbMAsEMwGkJ0Xus5KvVmS" alt="发布流程"></p>
-<h2 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h2><p>详细请看另外两篇博客：</p>
-<ul>
-<li><a href="https://www.zzq0324.cn/2021/07/16/how-to-deploy-jar-to-maven-central-part1/">(一)Jar包发布到Maven中央仓库之域名认证</a></li>
-<li><a href="https://www.zzq0324.cn/2021/07/16/how-to-deploy-jar-to-maven-central-part2/">(二)Jar包发布到Maven中央仓库之发布</a></li>
-</ul>
-<p><strong>需要说明的是，发布到<code>s01.oss.sonatype.org</code>之后，大概30分钟内会自动同步到中央仓库。</strong></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>刚开始环境配置还挺顺利的，很快就安装完了Java相关的环境，并写了个HelloWorld的类进行了测试，一切ok。接下来将手头的个别项目进行导入，并跑了下单元测试。诡异的情况出现了，在导入<a target="_blank" rel="noopener" href="https://github.com/zzq0324/feature-flag">feature-flag</a>项目之后，执行单元测试失败，但是通过mvn test和IDEA去执行都是正常的，报错信息如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Caused</span> by<span class="token operator">:</span> <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>arthas<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span></span>DynamicCompilerException</span><span class="token operator">:</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span></span>RuntimeException</span><span class="token operator">:</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span></span>RuntimeException</span><span class="token operator">:</span> <span class="token class-name">Wasn</span>'t able <span class="token keyword">to</span> <span class="token keyword">open</span> <span class="token namespace">file</span><span class="token operator">:</span><span class="token operator">/</span><span class="token class-name">Users</span><span class="token operator">/</span>zhengzhq<span class="token operator">/</span><span class="token class-name">Library</span><span class="token operator">/</span><span class="token class-name">Application</span><span class="token operator">%</span><span class="token number">20</span>Support<span class="token operator">/</span><span class="token class-name">Code</span><span class="token operator">/</span><span class="token class-name">User</span><span class="token operator">/</span>globalStorage<span class="token operator">/</span>redhat<span class="token punctuation">.</span>java<span class="token operator">/</span><span class="token number">0.82</span><span class="token number">.0</span><span class="token operator">/</span>config_mac<span class="token operator">/</span>org<span class="token punctuation">.</span>eclipse<span class="token punctuation">.</span>osgi<span class="token operator">/</span><span class="token number">81</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token punctuation">.</span>cp<span class="token operator">/</span>org as a jar file
+
+ at <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>arthas<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span></span>DynamicCompiler</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">DynamicCompiler</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">89</span><span class="token punctuation">)</span>
+
+ at <span class="token class-name"><span class="token namespace">cn<span class="token punctuation">.</span>zzq0324<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>flag<span class="token punctuation">.</span>support<span class="token punctuation">.</span></span>JdkCompiler</span><span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span><span class="token class-name">JdkCompiler</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">38</span><span class="token punctuation">)</span>
+
+ at <span class="token class-name"><span class="token namespace">cn<span class="token punctuation">.</span>zzq0324<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>flag<span class="token punctuation">.</span></span>FeatureFlagInstanceRegister</span><span class="token punctuation">.</span><span class="token function">compileAndLoadClass</span><span class="token punctuation">(</span><span class="token class-name">FeatureFlagInstanceRegister</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">83</span><span class="token punctuation">)</span>
+
+ at <span class="token class-name"><span class="token namespace">cn<span class="token punctuation">.</span>zzq0324<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>flag<span class="token punctuation">.</span></span>FeatureFlagInstanceRegister</span><span class="token punctuation">.</span><span class="token function">dynamicLoadClassAndRegisterBean</span><span class="token punctuation">(</span><span class="token class-name">FeatureFlagInstanceRegister</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">63</span><span class="token punctuation">)</span>
+
+ at <span class="token class-name"><span class="token namespace">cn<span class="token punctuation">.</span>zzq0324<span class="token punctuation">.</span>feature<span class="token punctuation">.</span>flag<span class="token punctuation">.</span></span>FeatureFlagInstanceRegister</span><span class="token punctuation">.</span><span class="token function">registerIfNotExist</span><span class="token punctuation">(</span><span class="token class-name">FeatureFlagInstanceRegister</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">39</span><span class="token punctuation">)</span>
+
+ <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token number">31</span> more
+
+<span class="token class-name">Caused</span> by<span class="token operator">:</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span></span>RuntimeException</span><span class="token operator">:</span> <span class="token class-name"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span></span>RuntimeException</span><span class="token operator">:</span> <span class="token class-name">Wasn</span>'t able <span class="token keyword">to</span> <span class="token keyword">open</span> <span class="token namespace">file</span><span class="token operator">:</span><span class="token operator">/</span><span class="token class-name">Users</span><span class="token operator">/</span>zhengzhq<span class="token operator">/</span><span class="token class-name">Library</span><span class="token operator">/</span><span class="token class-name">Application</span><span class="token operator">%</span><span class="token number">20</span>Support<span class="token operator">/</span><span class="token class-name">Code</span><span class="token operator">/</span><span class="token class-name">User</span><span class="token operator">/</span>globalStorage<span class="token operator">/</span>redhat<span class="token punctuation">.</span>java<span class="token operator">/</span><span class="token number">0.82</span><span class="token number">.0</span><span class="token operator">/</span>config_mac<span class="token operator">/</span>org<span class="token punctuation">.</span>eclipse<span class="token punctuation">.</span>osgi<span class="token operator">/</span><span class="token number">81</span><span class="token operator">/</span><span class="token number">0</span><span class="token operator">/</span><span class="token punctuation">.</span>cp<span class="token operator">/</span>org as a jar file
+
+ at <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>tools<span class="token punctuation">.</span>javac<span class="token punctuation">.</span>main<span class="token punctuation">.</span></span>Main</span><span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span><span class="token class-name">Main</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">559</span><span class="token punctuation">)</span>
+
+ at <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>tools<span class="token punctuation">.</span>javac<span class="token punctuation">.</span>api<span class="token punctuation">.</span></span>JavacTaskImpl</span><span class="token punctuation">.</span><span class="token function">doCall</span><span class="token punctuation">(</span><span class="token class-name">JavacTaskImpl</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">129</span><span class="token punctuation">)</span>
+
+ at <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>tools<span class="token punctuation">.</span>javac<span class="token punctuation">.</span>api<span class="token punctuation">.</span></span>JavacTaskImpl</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token class-name">JavacTaskImpl</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">138</span><span class="token punctuation">)</span>
+
+ at <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>arthas<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span></span>DynamicCompiler</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">DynamicCompiler</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">61</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>一开始还以为是VSCode的<a href="vscode-java-test">vscode-java-test</a>插件的bug导致的，因此提了<a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode-java-test/issues/1306">issue</a>，官方回复了，觉得这个问题是使用了<a target="_blank" rel="noopener" href="https://github.com/alibaba/arthas/tree/master/memorycompiler">arthas-memorycompiler</a>导致的，需要联系对方解决，因此打了<code>out-of-scope</code>的标签。想想好像也有道理，因此决定深入排查下问题，解决在VSCode上的解决问题。</p>
+<h2 id="排障"><a href="#排障" class="headerlink" title="排障"></a>排障</h2><p>通过debug观察，发现arthas-memorycompiler在路径中包含空格、Unicode字符的时候会出现Bug，该Bug会导致找不到文件从而错误的执行到Jar的解析逻辑中，如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JavaFileObject</span><span class="token punctuation">></span></span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token class-name">String</span> packageName<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> javaPackageName <span class="token operator">=</span> packageName<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span><span class="token string">"\\."</span><span class="token punctuation">,</span> <span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JavaFileObject</span><span class="token punctuation">></span></span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JavaFileObject</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">Enumeration</span><span class="token generics"><span class="token punctuation">&lt;</span>URL<span class="token punctuation">></span></span> urlEnumeration <span class="token operator">=</span> classLoader<span class="token punctuation">.</span><span class="token function">getResources</span><span class="token punctuation">(</span>javaPackageName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>urlEnumeration<span class="token punctuation">.</span><span class="token function">hasMoreElements</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// one URL for each jar on the classpath that has the given package</span>
+        <span class="token class-name">URL</span> packageFolderURL <span class="token operator">=</span> urlEnumeration<span class="token punctuation">.</span><span class="token function">nextElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        result<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token function">listUnder</span><span class="token punctuation">(</span>packageName<span class="token punctuation">,</span> packageFolderURL<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">private</span> <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JavaFileObject</span><span class="token punctuation">></span></span> <span class="token function">listUnder</span><span class="token punctuation">(</span><span class="token class-name">String</span> packageName<span class="token punctuation">,</span> <span class="token class-name">URL</span> packageFolderURL<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 如果是路径带空格，此处就会找不到文件，调用isDirectory()就会返回false</span>
+    <span class="token class-name">File</span> directory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token function">decode</span><span class="token punctuation">(</span>packageFolderURL<span class="token punctuation">.</span><span class="token function">getFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>directory<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// browse local .class files - useful for local execution</span>
+        <span class="token keyword">return</span> <span class="token function">processDir</span><span class="token punctuation">(</span>packageName<span class="token punctuation">,</span> directory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span> <span class="token comment">// browse a jar file</span>
+        <span class="token keyword">return</span> <span class="token function">processJar</span><span class="token punctuation">(</span>packageFolderURL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token comment">// maybe there can be something else for more involved class loaders</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>找到问题解决就方便了，通过<code>URLDecoder.decode</code>就可以解决该问题了。最终提了<a target="_blank" rel="noopener" href="https://github.com/alibaba/arthas/pull/1921">Pull Request</a>到arthas，并被官方采纳。顺便夸赞下，官方的Review速度很快，几个小时就Merged了。</p>
 
                 
             </div>
@@ -515,7 +563,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.zzq0324.cn/2021/07/18/jar-deploy-to-maven-central-flow/">https://www.zzq0324.cn/2021/07/18/jar-deploy-to-maven-central-flow/</a>
+                    <a href="https://www.zzq0324.cn/2021/09/23/arthas-memorycompiler-junit-test-error-in-vscode/">https://www.zzq0324.cn/2021/09/23/arthas-memorycompiler-junit-test-error-in-vscode/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -553,12 +601,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Maven/">
-                                    <span class="chip bg-color">Maven</span>
+                                <a href="/tags/Arthas/">
+                                    <span class="chip bg-color">Arthas</span>
                                 </a>
                             
-                                <a href="/tags/Sonatype/">
-                                    <span class="chip bg-color">Sonatype</span>
+                                <a href="/tags/Visual-Studio-Code/">
+                                    <span class="chip bg-color">Visual Studio Code</span>
                                 </a>
                             
                         </div>
@@ -657,17 +705,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/21/goal-based-theory/">
+                <a href="/2021/09/23/arthas-memorycompiler-junit-test-error-in-vscode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="目标管理九字箴言">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="记arthas-memorycompiler在VSCode报错">
                         
-                        <span class="card-title">目标管理九字箴言</span>
+                        <span class="card-title">记arthas-memorycompiler在VSCode报错</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -677,30 +726,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%A1%E7%90%86/" class="post-category">
-                                    管理
+                            <a href="/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    开源框架
+                                </a>
+                            
+                            <a href="/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%9B%AE%E6%A0%87/">
-                        <span class="chip bg-color">目标</span>
+                    <a href="/tags/Arthas/">
+                        <span class="chip bg-color">Arthas</span>
                     </a>
                     
-                    <a href="/tags/%E7%BB%84%E7%BB%87/">
-                        <span class="chip bg-color">组织</span>
+                    <a href="/tags/Visual-Studio-Code/">
+                        <span class="chip bg-color">Visual Studio Code</span>
                     </a>
                     
                 </div>
@@ -714,12 +768,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/18/deploy-blog-by-vercel/">
+                <a href="/2021/09/19/mac-vscode-shortcut/">
                     <div class="card-image">
                         
-                        <img src="https://static.zzq0324.cn/FrIb7TWhk9DOPNgEe1wTASZ1y0xd" class="responsive-img" alt="基于vercel搭建个人博客">
+                        <img src="https://static.zzq0324.cn/Fp29G3kY8bQgJyN4X9jrVJHE9MB-" class="responsive-img" alt="Mac VSCode快捷键">
                         
-                        <span class="card-title">基于vercel搭建个人博客</span>
+                        <span class="card-title">Mac VSCode快捷键</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -730,14 +784,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/" class="post-category">
-                                    云服务
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
                                 </a>
                             
                             
@@ -747,12 +801,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Vercel/">
-                        <span class="chip bg-color">Vercel</span>
+                    <a href="/tags/Visual-Studio-Code/">
+                        <span class="chip bg-color">Visual Studio Code</span>
                     </a>
                     
                 </div>

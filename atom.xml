@@ -6,7 +6,7 @@
   <link href="https://www.zzq0324.cn/atom.xml" rel="self"/>
   
   <link href="https://www.zzq0324.cn/"/>
-  <updated>2021-09-19T01:12:05.000Z</updated>
+  <updated>2021-09-23T13:19:49.000Z</updated>
   <id>https://www.zzq0324.cn/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>记arthas-memorycompiler在VSCode报错</title>
+    <link href="https://www.zzq0324.cn/2021/09/23/arthas-memorycompiler-junit-test-error-in-vscode/"/>
+    <id>https://www.zzq0324.cn/2021/09/23/arthas-memorycompiler-junit-test-error-in-vscode/</id>
+    <published>2021-09-23T01:12:44.000Z</published>
+    <updated>2021-09-23T13:19:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;相信不少Java开发人员都在使用&lt;code&gt;IntelliJ IDEA&lt;/code&gt;进行开发，本人也使用很长时间的&lt;code&gt;IntelliJ IDEA&lt;/code&gt;。随着Visual Studio</summary>
+        
+      
+    
+    
+    
+    <category term="开源框架" scheme="https://www.zzq0324.cn/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Arthas" scheme="https://www.zzq0324.cn/tags/Arthas/"/>
+    
+    <category term="Visual Studio Code" scheme="https://www.zzq0324.cn/tags/Visual-Studio-Code/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mac VSCode快捷键</title>
     <link href="https://www.zzq0324.cn/2021/09/19/mac-vscode-shortcut/"/>
     <id>https://www.zzq0324.cn/2021/09/19/mac-vscode-shortcut/</id>
     <published>2021-09-19T01:12:05.000Z</published>
-    <updated>2021-09-19T01:12:05.000Z</updated>
+    <updated>2021-09-19T01:23:50.000Z</updated>
     
     
       
@@ -47,7 +77,7 @@
     <link href="https://www.zzq0324.cn/2021/09/19/vscode-java-tutorial/"/>
     <id>https://www.zzq0324.cn/2021/09/19/vscode-java-tutorial/</id>
     <published>2021-09-19T00:27:10.000Z</published>
-    <updated>2021-09-19T01:20:16.000Z</updated>
+    <updated>2021-09-19T01:23:38.000Z</updated>
     
     
       
@@ -538,34 +568,6 @@
     <category term="Maven" scheme="https://www.zzq0324.cn/tags/Maven/"/>
     
     <category term="Sonatype" scheme="https://www.zzq0324.cn/tags/Sonatype/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于vercel搭建个人博客</title>
-    <link href="https://www.zzq0324.cn/2021/07/18/deploy-blog-by-vercel/"/>
-    <id>https://www.zzq0324.cn/2021/07/18/deploy-blog-by-vercel/</id>
-    <published>2021-07-17T17:00:26.000Z</published>
-    <updated>2021-07-24T14:45:01.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;使用&lt;code&gt;Hexo&lt;/code&gt;搭配&lt;code&gt;Pages&lt;/code&gt;服务来搭建自己的博客网站，就不需要花额外的钱购买服务器来部署博客了。目前市面上比较流行的，国外是&lt;code&gt;Github</summary>
-        
-      
-    
-    
-    
-    <category term="云服务" scheme="https://www.zzq0324.cn/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-    <category term="Hexo" scheme="https://www.zzq0324.cn/tags/Hexo/"/>
-    
-    <category term="Vercel" scheme="https://www.zzq0324.cn/tags/Vercel/"/>
     
   </entry>
   
