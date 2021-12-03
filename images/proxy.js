@@ -835,6 +835,7 @@ var rules = [
   ".google.co.ma",
   ".google.co.uk",
   ".google.com",
+  ".google.com.hk",
   ".google.de",
   "||google.dev",
   ".google.dj",
