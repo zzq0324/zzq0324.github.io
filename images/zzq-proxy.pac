@@ -1,4 +1,4 @@
-var proxy = "HTTPS ssl-1.1.1.1.xgj.me:443;";
+var proxy = "PROXY ssl-1.1.1.1.xgj.me:443;";
 
 var direct = 'DIRECT;';
 
