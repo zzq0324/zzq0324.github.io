@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MySQL慢查询影响业务要怎么紧急处理？, 漫天的沙">
+    <meta name="keywords" content="Mac ClashX配置代理白名单, 漫天的沙">
     <meta name="description" content="路漫漫其修远兮，吾将上下而求索">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MySQL慢查询影响业务要怎么紧急处理？ | 漫天的沙</title>
+    <title>Mac ClashX配置代理白名单 | 漫天的沙</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -289,12 +289,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://static.zzq0324.cn/FkyCXRsk5JtkMkhTDAXRUFOmRBQv')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MySQL慢查询影响业务要怎么紧急处理？</h1>
+                    <h1 class="description center-align post-title">Mac ClashX配置代理白名单</h1>
                 </div>
             </div>
         </div>
@@ -410,8 +410,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/ClashX/">
+                                <span class="chip bg-color">ClashX</span>
                             </a>
                         
                     </div>
@@ -422,8 +422,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                数据库
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                软件工具
                             </a>
                         
                     </div>
@@ -435,7 +435,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-06
+                    2021-12-30
                 </div>
                 
 
@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    643
+                    176
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -474,69 +474,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>系统上线后，发现数据库慢查询导致整个数据库实例的CPU飙高，优化程序再上线需要一定的时间，无法短时间内解决，这时候应该怎么紧急处理？本文将基于MySQL谈一下慢查询下的应急处理方案。</p>
-</blockquote>
-<h2 id="基于MySQL-Query-Rewrite组件"><a href="#基于MySQL-Query-Rewrite组件" class="headerlink" title="基于MySQL Query Rewrite组件"></a>基于MySQL <code>Query Rewrite</code>组件</h2><p>从<code>MySQL 5.7.6</code>版本开始支持<code>Rewrite Plugin</code>，可以将符合条件的SQL进行重写。这个特性还是非常有用的，可以根据实际需要去编写符合要求的限制规则。</p>
-<h3 id="安装和卸载插件"><a href="#安装和卸载插件" class="headerlink" title="安装和卸载插件"></a>安装和卸载插件</h3><p>MySQL的安装目录的<code>share</code>文件夹下自带<code>install_rewriter.sql</code>和<code>uninstall_rewriter.sql</code>。可以通过以下方式来进行安装和卸载：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">shell<span class="token operator">></span> mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p <span class="token operator">&lt;</span> install_rewriter<span class="token punctuation">.</span><span class="token keyword">sql</span>
-Enter password: <span class="token punctuation">(</span>enter root password here<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>执行后可以通过命令查看：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">SHOW</span> <span class="token keyword">GLOBAL</span> VARIABLES <span class="token operator">LIKE</span> <span class="token string">'rewriter_enabled'</span><span class="token punctuation">;</span>
-<span class="token operator">+</span><span class="token comment">------------------+-------+</span>
-<span class="token operator">|</span> Variable_name    <span class="token operator">|</span> <span class="token keyword">Value</span> <span class="token operator">|</span>
-<span class="token operator">+</span><span class="token comment">------------------+-------+</span>
-<span class="token operator">|</span> rewriter_enabled <span class="token operator">|</span> <span class="token keyword">ON</span>    <span class="token operator">|</span>
-<span class="token operator">+</span><span class="token comment">------------------+-------+</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>同样的，卸载命令如下：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">shell<span class="token operator">></span> mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p <span class="token operator">&lt;</span> uninstall_rewriter<span class="token punctuation">.</span><span class="token keyword">sql</span>
-Enter password: <span class="token punctuation">(</span>enter root password here<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>安装之后可以看到MySQL实例上增加了一个名叫<code>query_rewrite</code>的数据库。</p>
-<h3 id="设置重写规则"><a href="#设置重写规则" class="headerlink" title="设置重写规则"></a>设置重写规则</h3><p>规则保存在<code>query_rewrite.rewrite_rules</code>表。重写规则可以参照以下例子：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 插入替换规则，只要匹配的语句直接替换</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> query_rewrite<span class="token punctuation">.</span>rewrite_rules
-    <span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> replacement<span class="token punctuation">)</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span>
-    <span class="token string">'SELECT * FROM appdb.users WHERE id = ?'</span><span class="token punctuation">,</span>
-    <span class="token string">'SELECT * FROM appdb.users WHERE user_id = ?'</span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">-- 插入替换规则，指定数据库匹配的语句直接替换</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> query_rewrite<span class="token punctuation">.</span>rewrite_rules
-    <span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> replacement<span class="token punctuation">,</span> pattern_database<span class="token punctuation">)</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span>
-    <span class="token string">'SELECT * FROM users WHERE id = ?'</span><span class="token punctuation">,</span>
-    <span class="token string">'SELECT * FROM users WHERE user_id = ?'</span><span class="token punctuation">,</span>
-    <span class="token string">'appdb'</span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">-- 调用存储过程让规则生效</span>
-<span class="token keyword">CALL</span> query_rewrite<span class="token punctuation">.</span>flush_rewrite_rules<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>备注：设置之后一定要执行<code>query_rewrite.flush_rewrite_rules()</code>生效规则，如果没执行可能会导致误以为添加了但是不生效。</p>
-</blockquote>
-<p>设置规则后还可以通过修改规则的启用状态来控制是否生效，如下：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- enabled有2个值，YES生效，NO禁用</span>
-<span class="token keyword">UPDATE</span> query_rewrite<span class="token punctuation">.</span>rewrite_rules <span class="token keyword">SET</span> enabled <span class="token operator">=</span> <span class="token string">'NO'</span> <span class="token keyword">WHERE</span> id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token comment">-- 还是要继续执行</span>
-<span class="token keyword">CALL</span> query_rewrite<span class="token punctuation">.</span>flush_rewrite_rules<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="阿里云SQL限流功能"><a href="#阿里云SQL限流功能" class="headerlink" title="阿里云SQL限流功能"></a>阿里云<code>SQL限流</code>功能</h2><ul>
-<li>登录<a target="_blank" rel="noopener" href="https://hdm.console.aliyun.com/?spm=a2c4g.11186623.2.5.69722872r0qSAW">DAS控制台</a>;</li>
-<li>在左侧导航栏中单击实例监控;</li>
-<li>单击对应的数据库实例名称，进入实例详情页;</li>
-<li>进入实例会话页面，具体操作请参见<a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/94842.htm?spm=a2c4g.11186623.2.6.69722872r0qSAW">实例会话</a>;</li>
-<li>在<code>实例会话</code>页面，单击<code>SQL限流</code><br><img src="https://static.zzq0324.cn/FqR477bUb4TsyXQUiLZDSarjQU4M" alt="SQL限流界面"></li>
-<li>在<code>SQL限流（过滤）</code>对话框，单击页面左上角<code>创建</code><br><img src="https://static.zzq0324.cn/FqDuZNQIdiQn1EQACmr0ebWpuy6h" alt="创建限流"></li>
-<li>在创建SQL限流规则对话框中，填入相应信息，单击创建<br><img src="https://static.zzq0324.cn/FsKN9PPQTICUxWyAfKjV--29YxAm" alt="创建限流字段信息"></li>
-<li>SQL限流规则创建完成后，您可以在SQL限流列表查看SQL规则的状态<br><img src="https://static.zzq0324.cn/Fl_XwxqF2asWHCp9NVDMS9zGmDTv" alt="限流规则列表"></li>
+                <h2 id="官方地址"><a href="#官方地址" class="headerlink" title="官方地址"></a>官方地址</h2><p>ClashX官方地址：<a target="_blank" rel="noopener" href="https://github.com/yichengchen/clashX">https://github.com/yichengchen/clashX</a></p>
+<p>ClashX下载地址：<a target="_blank" rel="noopener" href="https://github.com/yichengchen/clashX/releases">https://github.com/yichengchen/clashX/releases</a></p>
+<h2 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h2><ul>
+<li>编辑<code>~/.config/clash/proxyIgnoreList.plist</code>(如果没有该文件，则新建)；</li>
+<li>参考<a target="_blank" rel="noopener" href="https://github.com/yichengchen/clashX/blob/master/proxyIgnoreList.plist">官方Demo</a>文件加入自定义的白名单域名，内容如下：</li>
 </ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/rewriter-query-rewrite-plugin-installation.html">Installing or Uninstalling the Rewriter Query Rewrite Plugin</a></li>
-<li><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/rewriter-query-rewrite-plugin-usage.html">Using the Rewriter Query Rewrite Plugin</a></li>
-<li><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/rewriter-query-rewrite-plugin-reference.html">Rewriter Query Rewrite Plugin Reference</a></li>
-<li><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/131417.html">阿里云SQL限流</a></li>
-</ul>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">plist</span> <span class="token name">PUBLIC</span> <span class="token string">"-//Apple//DTD PLIST 1.0//EN"</span> <span class="token string">"http://www.apple.com/DTDs/PropertyList-1.0.dtd"</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plist</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>192.168.0.0/16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>10.0.0.0/8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>172.16.0.0/12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>127.0.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>localhost<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>*.local<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>*.crashlytics.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+	<span class="token comment">&lt;!-- 上面的不能删掉 --></span>
+	...加入新的域名，如：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">></span></span>*.baidu.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>array</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plist</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -563,7 +522,7 @@ Enter password: <span class="token punctuation">(</span>enter root password here
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.zzq0324.cn/2021/08/06/mysql-slow-query-how-to-do/">https://www.zzq0324.cn/2021/08/06/mysql-slow-query-how-to-do/</a>
+                    <a href="https://www.zzq0324.cn/2021/12/30/clashx-ignore-proxy/">https://www.zzq0324.cn/2021/12/30/clashx-ignore-proxy/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,8 +560,8 @@ Enter password: <span class="token punctuation">(</span>enter root password here
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/ClashX/">
+                                    <span class="chip bg-color">ClashX</span>
                                 </a>
                             
                         </div>
@@ -701,68 +660,18 @@ Enter password: <span class="token punctuation">(</span>enter root password here
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2021/08/29/tec-extension-by-express-business/">
-                    <div class="card-image">
-                        
-                        <img src="https://static.zzq0324.cn/FlEWJDfV2f7gmIj26God-MfeOsMJ" class="responsive-img" alt="从打车业务发展看技术的扩展性">
-                        
-                        <span class="card-title">从打车业务发展看技术的扩展性</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    后端开发
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Cola/">
-                        <span class="chip bg-color">Cola</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/07/29/idea-profiler-memory-leak-full-gc/">
+                <a href="/2021/12/30/clashx-ignore-proxy/">
                     <div class="card-image">
                         
-                        <img src="https://static.zzq0324.cn/FoUhbbIQj_R6Kdw84FK5dIxrKkj-" class="responsive-img" alt="记IDEA Profiler排查内存泄露导致的Full GC问题">
                         
-                        <span class="card-title">记IDEA Profiler排查内存泄露导致的Full GC问题</span>
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Mac ClashX配置代理白名单">
+                        
+                        <span class="card-title">Mac ClashX配置代理白名单</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -773,7 +682,7 @@ Enter password: <span class="token punctuation">(</span>enter root password here
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-30
                             </span>
                         <span class="publish-author">
                             
@@ -787,15 +696,69 @@ Enter password: <span class="token punctuation">(</span>enter root password here
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IDEA/">
-                        <span class="chip bg-color">IDEA</span>
+                    <a href="/tags/ClashX/">
+                        <span class="chip bg-color">ClashX</span>
                     </a>
                     
-                    <a href="/tags/TroubleShoot/">
-                        <span class="chip bg-color">TroubleShoot</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/09/23/arthas-memorycompiler-junit-test-error-in-vscode/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="记arthas-memorycompiler在VSCode报错">
+                        
+                        <span class="card-title">记arthas-memorycompiler在VSCode报错</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    开源框架
+                                </a>
+                            
+                            <a href="/categories/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    软件工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Arthas/">
+                        <span class="chip bg-color">Arthas</span>
+                    </a>
+                    
+                    <a href="/tags/Visual-Studio-Code/">
+                        <span class="chip bg-color">Visual Studio Code</span>
                     </a>
                     
                 </div>

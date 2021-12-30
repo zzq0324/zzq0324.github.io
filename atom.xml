@@ -6,7 +6,7 @@
   <link href="https://www.zzq0324.cn/atom.xml" rel="self"/>
   
   <link href="https://www.zzq0324.cn/"/>
-  <updated>2021-09-23T13:19:49.000Z</updated>
+  <updated>2021-12-30T06:58:21.000Z</updated>
   <id>https://www.zzq0324.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac ClashX配置代理白名单</title>
+    <link href="https://www.zzq0324.cn/2021/12/30/clashx-ignore-proxy/"/>
+    <id>https://www.zzq0324.cn/2021/12/30/clashx-ignore-proxy/</id>
+    <published>2021-12-30T06:58:21.000Z</published>
+    <updated>2021-12-30T06:58:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;官方地址&quot;&gt;&lt;a href=&quot;#官方地址&quot; class=&quot;headerlink&quot; title=&quot;官方地址&quot;&gt;&lt;/a&gt;官方地址&lt;/h2&gt;&lt;p&gt;ClashX官方地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="ClashX" scheme="https://www.zzq0324.cn/tags/ClashX/"/>
+    
+  </entry>
   
   <entry>
     <title>记arthas-memorycompiler在VSCode报错</title>
@@ -540,34 +565,6 @@
     <category term="目标" scheme="https://www.zzq0324.cn/tags/%E7%9B%AE%E6%A0%87/"/>
     
     <category term="组织" scheme="https://www.zzq0324.cn/tags/%E7%BB%84%E7%BB%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jar包发布到Maven中央仓库流程</title>
-    <link href="https://www.zzq0324.cn/2021/07/18/jar-deploy-to-maven-central-flow/"/>
-    <id>https://www.zzq0324.cn/2021/07/18/jar-deploy-to-maven-central-flow/</id>
-    <published>2021-07-18T01:36:36.000Z</published>
-    <updated>2021-07-18T13:44:31.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Maven中央仓库并不支持直接发布 jar 包，需要将 jar 包发布到一些指定的第三方Maven仓库，然后该仓库再将 jar 包同步到 Maven中央仓库，Sonatype便是</summary>
-        
-      
-    
-    
-    
-    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Maven" scheme="https://www.zzq0324.cn/tags/Maven/"/>
-    
-    <category term="Sonatype" scheme="https://www.zzq0324.cn/tags/Sonatype/"/>
     
   </entry>
   
