@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>使用shields.io生成开源项目相关的图标</title>
+      <link href="/2022/04/09/shields-io/"/>
+      <url>/2022/04/09/shields-io/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>相信有开源经历的同学经常会看到在开源项目的README里有一些漂亮的图表，展示了项目的Star、Open Issue、Fork等的数量。那么这些图标是怎么生成的呢？今天给大家介绍下<a href="https://shields.io/">shields.io</a>。</p></blockquote><p>以<a href="https://github.com/apache/dubbo">Dubbo</a>官方为例，README会展示如下信息：<br><img src="https://static.zzq0324.cn/FsH1e5ktq0GQIg5efkmrUnWnanoO" alt="Dubbo README">。</p><p>那么，如果我们也想生成类似的图标，怎么生成？大家可以访问<a href="https://shields.io/">shields.io</a>快速生成，只需要将Github的地址拷贝过去即可，如下：<br><img src="https://static.zzq0324.cn/FuVN90aevGIowhSHRQdwucR2_hTj" alt="Alarm-Bot例子"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mac ClashX配置代理白名单</title>
       <link href="/2021/12/30/clashx-ignore-proxy/"/>
       <url>/2021/12/30/clashx-ignore-proxy/</url>

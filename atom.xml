@@ -6,7 +6,7 @@
   <link href="https://www.zzq0324.cn/atom.xml" rel="self"/>
   
   <link href="https://www.zzq0324.cn/"/>
-  <updated>2021-12-30T06:58:21.000Z</updated>
+  <updated>2022-04-09T12:40:09.000Z</updated>
   <id>https://www.zzq0324.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用shields.io生成开源项目相关的图标</title>
+    <link href="https://www.zzq0324.cn/2022/04/09/shields-io/"/>
+    <id>https://www.zzq0324.cn/2022/04/09/shields-io/</id>
+    <published>2022-04-09T12:40:09.000Z</published>
+    <updated>2022-04-09T12:40:09.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;相信有开源经历的同学经常会看到在开源项目的README里有一些漂亮的图表，展示了项目的Star、Open Issue、Fork等的数量。那么这些图标是怎么生成的呢？今天给大家介绍下&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="https://www.zzq0324.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="GitHub" scheme="https://www.zzq0324.cn/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac ClashX配置代理白名单</title>
@@ -537,34 +563,6 @@
     
     
     <category term="企业文化" scheme="https://www.zzq0324.cn/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>目标管理九字箴言</title>
-    <link href="https://www.zzq0324.cn/2021/07/21/goal-based-theory/"/>
-    <id>https://www.zzq0324.cn/2021/07/21/goal-based-theory/</id>
-    <published>2021-07-21T02:46:30.000Z</published>
-    <updated>2021-07-24T14:13:44.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;在职场中，相信大家都会为自己或者团队设定短期、中期以及长期目标。如何设定目标？目标设定后，用什么样的方式去管理？怎么更好的去落地？有没有什么方法论能够很好的支撑？相信大家都会遇到这样的问题，本文将为您介绍九字箴言，通过一定的套路来对目标做管理。&lt;/</summary>
-        
-      
-    
-    
-    
-    <category term="管理" scheme="https://www.zzq0324.cn/categories/%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="目标" scheme="https://www.zzq0324.cn/tags/%E7%9B%AE%E6%A0%87/"/>
-    
-    <category term="组织" scheme="https://www.zzq0324.cn/tags/%E7%BB%84%E7%BB%87/"/>
     
   </entry>
   
